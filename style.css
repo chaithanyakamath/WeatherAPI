@@ -23,6 +23,11 @@ input[type="text"] {
   border: 1px solid #ccc;
 }
 
+h2{
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
 button {
   padding: 0.5rem 1rem;
   margin-left: 10px;
@@ -103,11 +108,11 @@ button:hover {
 @media (max-width: 600px) {
   /* ✅ TOP AREA UNCHANGED */
   h1 {
-    font-size: 17px;
+    font-size: 19px;
   }
 
   h2 {
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .search-box {
@@ -127,8 +132,8 @@ button:hover {
   }
 
   .card {
-    max-width: 40vw;
-    font-size: 12px;
+    max-width: 50vw;
+    font-size: 14px;
   }
 
   /* ✅ BOTTOM AREA ISOLATED */
@@ -166,8 +171,29 @@ button:hover {
 }
 
 /* Tablet adjustment (optional) */
+
 @media (min-width: 601px) and (max-width: 900px) {
-  .city-card {
-    flex: 0 0 calc(50% - 0.75rem);
+  .city-weather-section .carousel-wrapper {
+    max-width: 680px; /* Just enough for 3 cards + buttons */
+    margin: 0 auto;
+    gap: 8px;
+  }
+
+  .city-weather-section .carousel-track {
+    max-width: 510px; /* 3 cards × 160px + 2 gaps */
+    gap: 10px;
+  }
+
+  .city-weather-section .city-card {
+    flex: 0 0 160px;
+    font-size: 13px;
+    padding: 0.8rem;
+  }
+
+  .city-weather-section .scroll-btn {
+    font-size: 1.4rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
   }
 }
+
