@@ -104,19 +104,37 @@ function loadWeatherEffect(weatherType) {
   switch (weatherType.toLowerCase()) {
     case 'rain':
     case 'drizzle':
-      // you can use a particle effect here manually (or GIF)
-      break;
+    effect = VANTA.CLOUDS({
+    el: "#weather-bg",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    backgroundColor: 0x131111,
+    skyColor: 0x4165a7,
+    speed: 1.90,
+    texturePath: "./gallery/noise.png"
+    });
+    break;
 
     case 'clouds':
     case 'mist':
     case 'fog':
-      effect = VANTA.CLOUDS({
-        el: "#weather-bg",
-        skyColor: 0x99ccff,
-        cloudColor: 0xffffff,
-        speed: 1.5
-      });
-      break;
+    effect = VANTA.CLOUDS({
+      el: "#weather-bg",  // ✅ Use the actual ID in your HTML
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      skyColor: 0x5f7377,
+      cloudColor: 0x6e9cd4,
+      cloudShadowColor: 0x132a3b,
+      sunColor: 0x2e2924
+    });
+    break;
 
     case 'clear':
       effect = VANTA.WAVES({
@@ -130,7 +148,20 @@ function loadWeatherEffect(weatherType) {
       break;
 
     case 'snow':
-      // VANTA.NET or particles
+    effect = VANTA.CLOUDS({
+    el: "#weather-bg",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    highlightColor: 0x403e38,
+    midtoneColor: 0xbfd3db,
+    lowlightColor: 0x6292a9,
+    baseColor: 0xaec2b9,
+    speed: 4.10,
+    zoom: 1.20
+});
       break;
 
     default:
