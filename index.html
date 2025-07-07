@@ -9,33 +9,31 @@
 <body>
   <div id="weather-bg" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1;"></div>
 
-
-
-
-
   <div class="container">
     <h1>🌤️ Weather Forecast</h1>
-
     <div class="search-box">
       <input type="text" id="locationInput" placeholder="Enter location (e.g., Mangalore)" />
-      <button onclick="getWeather()">Get Weather</button>
+      <button  class="ip" onclick="getWeather()">Get Weather</button>
     </div>
 
     <div id="weatherCard" class="card"></div>
 
-    <h2 style="margin-top: 40px;">🌍 Weather in Major Indian Cities</h2>
-
+  <div class="city-weather-section">
+    <h2>🌍 Weather in Major Indian Cities</h2>
     <div class="carousel-wrapper">
-        <button class="scroll-btn left" onclick="scrollCities('left')">←</button>
-
-        <div id="cityWeatherContainer" class="carousel-track"></div>
-
-        <button class="scroll-btn right" onclick="scrollCities('right')">→</button>
+      <button class="scroll-btn left" onclick="scrollCities('left')">←</button>
+      <div id="cityWeatherContainer" class="carousel-track">
+      <!-- City cards will go here -->
+      </div>
+      <button class="scroll-btn right" onclick="scrollCities('right')">→</button>
     </div>
   </div>
 
-  <script src="script.js"></script>
 
+
+  </div>
+
+  <script src="script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>

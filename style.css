@@ -4,7 +4,7 @@ body {
   padding: 2rem;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   min-height: 100vh;
 }
 
@@ -48,41 +48,7 @@ button:hover {
   margin-right: auto;
 }
 
-.city-scroll {
-  display: flex;
-  flex-direction: row; 
-  overflow-x: auto;
-  gap: 1rem;
-  padding: 1rem 0;
-  scroll-behavior: smooth;
-}
-
-.city-scroll::-webkit-scrollbar {
-  height: 8px;
-}
-
-.city-scroll::-webkit-scrollbar-thumb {
-  background-color: #aaa;
-  border-radius: 4px;
-}
-
-.city-card {
-  flex: 0 0 200px;
-  flex-direction: row;
-  background-color: #ffffff;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease, background-color 0.3s;
-}
-
-.city-card:hover {
-  transform: scale(1.05);
-  background-color: #f0f8ff;
-}
-
-/* Container wrapping track + buttons */
+/* City weather scroll (desktop default) */
 .carousel-wrapper {
   display: flex;
   align-items: center;
@@ -94,7 +60,6 @@ button:hover {
   overflow: hidden;
 }
 
-/* Scrollable container showing 4 items at a time */
 .carousel-track {
   display: flex;
   gap: 1rem;
@@ -103,9 +68,8 @@ button:hover {
   width: 100%;
 }
 
-/* Weather cards */
 .city-card {
-  flex: 0 0 calc(25% - 0.75rem); /* 4 cards per view */
+  flex: 0 0 calc(25% - 0.75rem); /* 4 per view */
   background-color: #ffffff;
   padding: 1rem;
   border-radius: 10px;
@@ -116,9 +80,9 @@ button:hover {
 
 .city-card:hover {
   transform: scale(1.05);
+  background-color: #f0f8ff;
 }
 
-/* Scroll buttons */
 .scroll-btn {
   background-color: #0077cc;
   color: white;
@@ -135,6 +99,75 @@ button:hover {
   background-color: #005fa3;
 }
 
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  /* ✅ TOP AREA UNCHANGED */
+  h1 {
+    font-size: 17px;
+  }
 
+  h2 {
+    font-size: 15px;
+  }
 
+  .search-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  input[type="text"] {
+    width: 65%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 40%;
+    margin-left: 0;
+  }
+
+  .card {
+    max-width: 40vw;
+    font-size: 12px;
+  }
+
+  /* ✅ BOTTOM AREA ISOLATED */
+  .city-weather-section .carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: 340px; /* 2 cards + gaps + buttons */
+    margin: 0 auto;
+    flex-wrap: nowrap;
+  }
+
+  .city-weather-section .carousel-track {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    flex: 0 0 auto;
+    max-width: 240px; /* 2 cards */
+  }
+
+  .city-weather-section .city-card {
+    flex: 0 0 115px;
+    font-size: 12px;
+    padding: 0.5rem;
+  }
+
+  .city-weather-section .scroll-btn {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.6rem;
+    height: 100%;
+    border-radius: 18px;
+  }
+}
+
+/* Tablet adjustment (optional) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .city-card {
+    flex: 0 0 calc(50% - 0.75rem);
+  }
+}
