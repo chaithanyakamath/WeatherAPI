@@ -137,7 +137,7 @@ function loadWeatherEffect(weatherType) {
     break;
 
     case 'clear':
-      effect = VANTA.WAVES({
+      effect = VANTA.CLOUDS({
         el: "#weather-bg",
         color: 0x1e90ff,
         shininess: 50,
